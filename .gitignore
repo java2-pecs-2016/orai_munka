@@ -4,3 +4,4 @@
 /.apt_generated/
 
 *.factorypath
+*.classpath
