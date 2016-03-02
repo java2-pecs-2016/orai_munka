@@ -8,4 +8,19 @@
   <tag-class>hu.sol.mik.hw.test.taglib.HelloTag</tag-class>
   <body-content>scriptless</body-content>
  </tag>
+ <tag>
+  <name>useSzorzo</name>
+  <tag-class>hu.sol.mik.hw.test.taglib.SzorzoTag</tag-class>
+  <body-content>scriptless</body-content>
+  <attribute>
+  		<name>szam1</name>
+  		<required>true</required>
+  		
+  	</attribute>
+  	<attribute>
+  		<name>szam2</name>
+  		<required>true</required>
+  		
+  	</attribute>
+ </tag>
 </taglib>

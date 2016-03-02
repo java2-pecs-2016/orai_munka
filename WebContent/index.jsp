@@ -16,6 +16,8 @@ request.setAttribute( "nevek", new String[]{"Béla","István","Dávid"} );
 	<mik:sayHello>${nev}</mik:sayHello><br/>
 </c:forEach>
 
+<mik:useSzorzo szam1 = "10" szam2 = "10"></mik:useSzorzo><br/>
+
 
 
 </body> 
