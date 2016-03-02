@@ -7,16 +7,13 @@
 <title>Cím</title>
 </head>
 <body>
-<% String[] nevek = new String[]{ 
-	"Béla",
-	"István",
-	"Dávid"
-};
+<%
+request.setAttribute( "nevek", new String[]{"Béla","István","Dávid"} ); 
 %>
 
 
 <c:forEach items="${nevek}" var="nev">
-	<mik:sayHello>d</mik:sayHello><br/>
+	<mik:sayHello>${nev}</mik:sayHello><br/>
 </c:forEach>
 
 

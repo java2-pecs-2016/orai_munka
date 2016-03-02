@@ -1,3 +1,6 @@
 /.settings/
 /build/
 /.tern-project
+/.apt_generated/
+
+*.factorypath
