@@ -28,7 +28,7 @@ public class SzorzoTag extends SimpleTagSupport {
 		
 		JspWriter out = getJspContext().getOut();
 		
-		out.print("<h1>SzorzÛt·bla</h1>");
+		out.print("<h1>Szorz√≥t√°bla</h1>");
 		out.print("<table border=1 cellpadding=5>");
 		out.print("<tr><th>");
 		for (int i = 1; i <= szam2; i++ ) {

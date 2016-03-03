@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="mik" uri="/WEB-INF/Hello.tld" %>
 <html>
 <head>
-<title>Cím</title>
+<title>CÃ­m</title>
 </head>
 <body>
 <%
-request.setAttribute( "nevek", new String[]{"Béla","István","Dávid"} ); 
+request.setAttribute( "nevek", new String[]{"BÃ©la","IstvÃ¡n","DÃ¡vid"} ); 
 %>
 
 
