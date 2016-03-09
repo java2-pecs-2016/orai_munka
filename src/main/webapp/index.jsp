@@ -7,6 +7,9 @@
 <title>Cím</title>
 </head>
 <body>
+
+<a href="${pageContext.request.contextPath}/page?param=include">Oldal beágyazás</a> <br>
+<a href="${pageContext.request.contextPath}/page?param=forward">Oldal továbbítás</a> <br><br>
 <%
 request.setAttribute( "nevek", new String[]{"Béla","István","Dávid"} ); 
 %>
