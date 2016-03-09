@@ -38,4 +38,10 @@ public class Book {
 		this.pubYear = pubYear;
 	}
 
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", description=" + description
+				+ ", author=" + author + ", pubYear=" + pubYear + "]";
+	}
+
 }

@@ -28,7 +28,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>bookServlet</servlet-name>
-  	<url-pattern>/book</url-pattern>
+  	<url-pattern>/book/book</url-pattern>
   </servlet-mapping>
   
   
