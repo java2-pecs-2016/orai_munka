@@ -22,6 +22,16 @@
   	<url-pattern>/page</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>bookServlet</servlet-name>
+  	<servlet-class>hu.sol.mik.book.servlet.BookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>bookServlet</servlet-name>
+  	<url-pattern>/book</url-pattern>
+  </servlet-mapping>
+  
+  
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
