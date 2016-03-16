@@ -7,12 +7,13 @@
 <title>Könyv felvitele</title>
 </head>
 <body>
-	Könyv adatainak megadása: <br/>
-	<form action="book" method="post" accept-charset="UTF-8">
-		Szerző: <input type="text" name="author"> <br/>
-		Cím: <input type="text" name="title"> <br/>
-		Leírás: <input type="text" name="description"> <br/>
-		Kiadás éve: <input type="text" name="pubYear"> <br/>
+	Könyv adatainak megadása:<br/>
+	<form action="bookEdit" method="post" accept-charset="UTF-8">
+		<input type="hidden" name="id" value="${book.id}">
+		Szerző: <input type="text" name="author" value="${book.author}"> <br/>
+		Cím: <input type="text" name="title" value="${book.title}"> <br/>
+		Leírás: <input type="text" name="description"  value="${book.description}"> <br/>
+		Kiadás éve: <input type="text" name="pubYear"  value="${book.pubYear}"> <br/>
 		<input type="submit">
 	</form>
 </body>

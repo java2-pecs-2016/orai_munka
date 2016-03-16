@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>HelloWorld</display-name>
-  
-  <listener>
-      <listener-class>hu.sol.mik.hw.test.listener.RequestCharEncoding</listener-class>
-  </listener>
-  
-  <servlet>
-  		<servlet-name>helloServlet</servlet-name>
-  		<servlet-class>hu.sol.mik.hw.test.servlet.HelloServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>helloServlet</servlet-name>
-  	<url-pattern>/helloServlet</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>pageServlet</servlet-name>
-  	<servlet-class>hu.sol.mik.hw.test.servlet.PageServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>pageServlet</servlet-name>
-  	<url-pattern>/page</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>bookServlet</servlet-name>
-  	<servlet-class>hu.sol.mik.book.servlet.BookServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>bookServlet</servlet-name>
-  	<url-pattern>/book/book</url-pattern>
-  </servlet-mapping>
-  
-  
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>HelloWorld</display-name>
+
+	<listener>
+		<listener-class>hu.sol.mik.hw.test.listener.RequestCharEncoding</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>hu.sol.mik.hw.test.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>BookDetailsServlet</servlet-name>
+		<servlet-class>hu.sol.mik.book.servlet.BookDetailsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>pageServlet</servlet-name>
+		<servlet-class>hu.sol.mik.hw.test.servlet.PageServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	    <servlet-name>BookListServlet</servlet-name>
+	    <servlet-class>hu.sol.mik.book.servlet.BookListServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	    <servlet-name>BookEditServlet</servlet-name>
+	    <servlet-class>hu.sol.mik.book.servlet.BookEditServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/helloServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>pageServlet</servlet-name>
+		<url-pattern>/page</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BookDetailsServlet</servlet-name>
+		<url-pattern>/book/bookDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>BookEditServlet</servlet-name>
+		<url-pattern>/book/bookEdit</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>BookListServlet</servlet-name>
+		<url-pattern>/book/bookList</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

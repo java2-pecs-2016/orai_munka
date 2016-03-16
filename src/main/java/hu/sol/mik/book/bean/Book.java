@@ -1,6 +1,14 @@
 package hu.sol.mik.book.bean;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1238694419445332357L;
+	private Long id;
 	private String title;
 	private String description;
 	private String author;
@@ -8,6 +16,14 @@ public class Book {
 
 	public String getTitle() {
 		return title;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setTitle(String title) {
@@ -40,8 +56,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", description=" + description
-				+ ", author=" + author + ", pubYear=" + pubYear + "]";
+		return "Book [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author
+				+ ", pubYear=" + pubYear + "]";
 	}
 
 }
