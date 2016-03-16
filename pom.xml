@@ -10,6 +10,10 @@
 		<source.encoding>UTF-8</source.encoding>
 		<jdk.version>1.7</jdk.version>
 		<junit.version>4.12</junit.version>
+		<ojdbc.version>11.2.0</ojdbc.version>
+		<hibernate.version>5.1.0.Final</hibernate.version>
+		<log4j.version>2.5</log4j.version>
+		<juplo.version>1.1.0</juplo.version>
 	</properties>
 
 
@@ -44,7 +48,8 @@
 			<version>1.9.2</version>
 		</dependency>
 
-		<dependency>			<groupId>com.oracle</groupId>
+		<dependency>
+			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc</artifactId>
 			<version>14</version>
 			<scope>system</scope>
@@ -53,11 +58,22 @@
 
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>orai18n</artifactId>
-			<version>11.2.0.2.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/orai18n.jar</systemPath> <!-- must match file name -->
+			<artifactId>ojdbc6</artifactId>
+			<version>${ojdbc.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -77,6 +93,31 @@
 
 
 	<profiles>
+		<profile>
+			<id>generate</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>de.juplo</groupId>
+						<artifactId>hibernate4-maven-plugin</artifactId>
+						<version>${juplo.version}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>export</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<target>SCRIPT</target>
+							<type>BOTH</type>
+							<lineLength>120</lineLength>
+							<outputFile>${basedir}/sql/drop_and_create_db_script.sql</outputFile>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<id>deployToTest</id>
 			<build>

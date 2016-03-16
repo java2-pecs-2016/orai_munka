@@ -2,16 +2,35 @@ package hu.sol.mik.book.bean;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "book")
 public class Book implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1238694419445332357L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GEN")
+	@SequenceGenerator(name = "SEQ_GEN", sequenceName = "book_seq")
 	private Long id;
+
+	@Column(name = "title", length = 200)
 	private String title;
+
+	@Column(name = "description", length = 2000)
 	private String description;
+
+	@Column(name = "author", length = 200)
 	private String author;
+
+	@Column(name = "pub_year")
 	private int pubYear;
 
 	public String getTitle() {
@@ -56,8 +75,9 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author
-				+ ", pubYear=" + pubYear + "]";
+		return "Book [id=" + id + ", title=" + title + ", description="
+				+ description + ", author=" + author + ", pubYear=" + pubYear
+				+ "]";
 	}
 
 }
