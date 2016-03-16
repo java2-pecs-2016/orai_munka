@@ -45,10 +45,9 @@ public class BookEditServlet extends HttpServlet {
 	}
 
 	private void navigateToBookList(HttpServletRequest req, HttpServletResponse resp) {
-		RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/book/bookList");
 		try {
-			requestDispatcher.forward(req, resp);
-		} catch (Exception e) {
+			resp.sendRedirect("bookList");
+		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 	}
