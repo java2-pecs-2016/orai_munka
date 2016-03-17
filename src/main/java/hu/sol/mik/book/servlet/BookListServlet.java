@@ -2,7 +2,6 @@ package hu.sol.mik.book.servlet;
 
 import hu.sol.mik.book.dao.BookDao;
 import hu.sol.mik.book.dao.impl.BookDaoImpl;
-import hu.sol.mik.book.service.BookService;
 
 import java.io.IOException;
 
@@ -25,7 +24,7 @@ public class BookListServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.setAttribute("bookList", new BookService().getBookList());
+		req.setAttribute("bookList", bookDao.listAll());
 		navigateToBookList(req, resp);
 	}
 

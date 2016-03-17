@@ -3,7 +3,6 @@ package hu.sol.mik.book.servlet;
 import hu.sol.mik.book.bean.Book;
 import hu.sol.mik.book.dao.BookDao;
 import hu.sol.mik.book.dao.impl.BookDaoImpl;
-import hu.sol.mik.book.service.BookService;
 
 import java.io.IOException;
 

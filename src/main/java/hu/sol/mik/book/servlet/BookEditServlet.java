@@ -3,7 +3,6 @@ package hu.sol.mik.book.servlet;
 import hu.sol.mik.book.bean.Book;
 import hu.sol.mik.book.dao.BookDao;
 import hu.sol.mik.book.dao.impl.BookDaoImpl;
-import hu.sol.mik.book.service.BookService;
 
 import java.io.IOException;
 
@@ -32,7 +31,7 @@ public class BookEditServlet extends HttpServlet {
 			navigateToBookEdit(req, resp, new Book());
 		} else {
 			Long bookId = Long.valueOf(parameter);
-			Book book = new BookService().getBookById(bookId);
+			Book book = bookDao.findBookbyid(bookId);
 			navigateToBookEdit(req, resp, book);
 		}
 	}
