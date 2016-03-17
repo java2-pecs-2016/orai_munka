@@ -1,10 +1,13 @@
 package hu.sol.mik.book.servlet;
 
 import hu.sol.mik.book.bean.Book;
+import hu.sol.mik.book.dao.BookDao;
+import hu.sol.mik.book.dao.impl.BookDaoImpl;
 import hu.sol.mik.book.service.BookService;
 
 import java.io.IOException;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +18,13 @@ import org.apache.commons.beanutils.BeanUtils;
 
 public class BookEditServlet extends HttpServlet {
 
+	private BookDao bookDao;
+
+	@PostConstruct
+	private void initialize() {
+		bookDao = new BookDaoImpl();
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String parameter = req.getParameter("bookId");
@@ -33,10 +43,9 @@ public class BookEditServlet extends HttpServlet {
 		try {
 			BeanUtils.populate(book, req.getParameterMap());
 			if (req.getParameter("id") == null || req.getParameter("id").isEmpty()) {
-				book.setId(null);
-				new BookService().addBook(book);
+				bookDao.saveBook(book);
 			} else {
-				new BookService().updateBook(book);
+				bookDao.updateBook(book);
 			}
 			navigateToBookList(req, resp);
 		} catch (Exception e) {

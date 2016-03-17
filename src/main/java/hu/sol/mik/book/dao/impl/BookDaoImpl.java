@@ -21,14 +21,14 @@ public class BookDaoImpl implements BookDao {
 		// Tranzakció indítása
 		Transaction transaction = session.beginTransaction();
 
-		Book book = session.get(Book.class, id);
+		Book book = (Book) session.get(Book.class, id);
 
 		// commit
 		transaction.commit();
 		// session zárása
 		session.close();
-		
-		//return
+
+		// return
 		return book;
 	}
 
