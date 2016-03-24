@@ -108,6 +108,7 @@
 							</execution>
 						</executions>
 						<configuration>
+							<hibernateDialect>org.hibernate.dialect.Oracle10gDialect</hibernateDialect>
 							<target>SCRIPT</target>
 							<type>BOTH</type>
 							<lineLength>120</lineLength>

@@ -18,7 +18,7 @@ public class Book implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GEN")
-	@SequenceGenerator(name = "SEQ_GEN", sequenceName = "book_seq")
+	@SequenceGenerator(name = "SEQ_GEN", sequenceName = "book_seq", allocationSize = 1)
 	private Long id;
 
 	@Column(name = "title", length = 200)
@@ -75,9 +75,8 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", description="
-				+ description + ", author=" + author + ", pubYear=" + pubYear
-				+ "]";
+		return "Book [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author
+				+ ", pubYear=" + pubYear + "]";
 	}
 
 }
