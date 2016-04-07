@@ -1,6 +1,12 @@
 package hu.sol.mik.book.dao.impl;
 
+import hu.sol.mik.book.bean.Book;
+import hu.sol.mik.book.dao.BookDao;
+import hu.sol.mik.book.util.HibernateUtil;
+
 import java.util.List;
+
+import javax.jws.WebService;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -8,10 +14,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
-import hu.sol.mik.book.bean.Book;
-import hu.sol.mik.book.dao.BookDao;
-import hu.sol.mik.book.util.HibernateUtil;
-
+@WebService
 public class BookDaoImpl implements BookDao {
 
 	@Override

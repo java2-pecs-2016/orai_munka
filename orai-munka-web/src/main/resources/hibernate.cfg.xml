@@ -4,6 +4,7 @@
 	<session-factory>
 		<property name="hibernate.connection.datasource">java:/jdbc/bookDatasource</property>
 		<property name="hibernate.default_schema">JAVA_A_GYAKORLATBAN</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 		<property name="hibernate.id.new_generator_mappings">false</property>
 		<property name="show_sql">true</property>
 

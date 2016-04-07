@@ -5,7 +5,7 @@
 
 *.factorypath
 *.classpath
-*./bin/
+*/bin/
 
 *.project
 */target
