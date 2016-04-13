@@ -21,17 +21,17 @@
 		<servlet-name>pageServlet</servlet-name>
 		<servlet-class>hu.sol.mik.hw.test.servlet.PageServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
-	    <servlet-name>BookListServlet</servlet-name>
-	    <servlet-class>hu.sol.mik.book.servlet.BookListServlet</servlet-class>
+		<servlet-name>BookListServlet</servlet-name>
+		<servlet-class>hu.sol.mik.book.servlet.BookListServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
-	    <servlet-name>BookEditServlet</servlet-name>
-	    <servlet-class>hu.sol.mik.book.servlet.BookEditServlet</servlet-class>
+		<servlet-name>BookEditServlet</servlet-name>
+		<servlet-class>hu.sol.mik.book.servlet.BookEditServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>helloServlet</servlet-name>
 		<url-pattern>/helloServlet</url-pattern>
@@ -46,12 +46,12 @@
 		<servlet-name>BookDetailsServlet</servlet-name>
 		<url-pattern>/book/bookDetails</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>BookEditServlet</servlet-name>
 		<url-pattern>/book/bookEdit</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>BookListServlet</servlet-name>
 		<url-pattern>/book/bookList</url-pattern>
@@ -61,4 +61,47 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
+	<security-constraint>
+		<display-name>Security Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>Free pages</web-resource-name>
+			<url-pattern>/login.jsp</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>DELETE</http-method>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+			<http-method>PUT</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+		    <role-name>Administrator</role-name>
+		    <role-name>School</role-name>
+		    <role-name>Manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>form-auth</realm-name>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/error.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<security-role>
+	    <description>Administrator</description>
+	    <role-name>Administrator</role-name>
+	</security-role>
+	<security-role>
+	    <description>Manager</description>
+	    <role-name>Manager</role-name>
+	</security-role>
+	<security-role>
+	    <description>School</description>
+	    <role-name>School</role-name>
+	</security-role>
 </web-app>
