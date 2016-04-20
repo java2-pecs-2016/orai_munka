@@ -9,7 +9,7 @@
 	<artifactId>orai-munka-web</artifactId>
 	<packaging>war</packaging>
 
-	
+
 
 
 	<dependencies>
@@ -68,6 +68,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.2.5.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 
