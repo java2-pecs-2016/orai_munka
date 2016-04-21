@@ -3,6 +3,8 @@ package hu.sol.mik.book.controller;
 import hu.sol.mik.book.bean.Book;
 import hu.sol.mik.book.dao.BookDao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/book")
 public class BookController {
 
+
+	@Autowired
+	@Qualifier("elsoDao")
 	private BookDao bookDao;
 
-	public BookController(BookDao bookDao) {
-		this.bookDao = bookDao;
-	}
 
 	@RequestMapping("/bookList")
 	public String listBooks(Model model) {

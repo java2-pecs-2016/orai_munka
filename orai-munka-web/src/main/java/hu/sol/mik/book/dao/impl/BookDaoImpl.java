@@ -13,8 +13,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 @WebService
+@Repository("elsoDao")
 public class BookDaoImpl implements BookDao {
 
 	@Override
