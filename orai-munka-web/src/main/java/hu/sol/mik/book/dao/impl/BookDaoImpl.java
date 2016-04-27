@@ -79,4 +79,13 @@ public class BookDaoImpl implements BookDao {
 		session.close();
 	}
 
+	@Override
+	public void delete(Book book) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		session.delete(book);
+		transaction.commit();
+		session.close();
+	}
+
 }

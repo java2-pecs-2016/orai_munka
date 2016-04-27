@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<HTML xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head></h:head>
+<h:body>
+	<h:form id="from">
+		<h:outputText value="Könyvek listája!" />
+		<p:dataTable var="book" value="#{bookManagedBean.bookList}"
+			rowKey="#{book.id}" selection="#{bookManagedBean.selectedBooks}">
+			<p:column selectionMode="multiple">
+
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Szerző" />
+				</f:facet>
+				<h:outputText value="#{book.author}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Cím" />
+				</f:facet>
+				<h:outputText value="#{book.title}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Leírás" />
+				</f:facet>
+				<h:outputText value="#{book.description}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Kiadás" />
+				</f:facet>
+				<h:outputText value="#{book.pubYear}" />
+			</p:column>
+			<p:column>
+				<h:commandButton value="Szerkeszt">
+					<f:setPropertyActionListener value="#{book}"
+						target="#{bookManagedBean.editedBook}"></f:setPropertyActionListener>
+				</h:commandButton>
+			</p:column>
+		</p:dataTable>
+		<p:panel>
+			<p:panelGrid columns="2">
+				<h:commandButton value="Új könyv felvitele"
+					actionListener="#{bookManagedBean.newBook}">
+				</h:commandButton>
+				<h:commandButton value="Kijelöltek törlése"
+					actionListener="#{bookManagedBean.deleteSelectedBooks}">
+				</h:commandButton>
+			</p:panelGrid>
+		</p:panel>
+		<p:panel rendered="#{not empty bookManagedBean.editedBook}">
+			<p:panelGrid columns="2">
+				<f:facet name="header">Könyv adatai</f:facet>
+				<h:outputText value="Szerző"></h:outputText>
+				<h:inputText value="#{bookManagedBean.editedBook.author}"></h:inputText>
+				<h:outputText value="Cím"></h:outputText>
+				<h:inputText value="#{bookManagedBean.editedBook.title}"></h:inputText>
+				<h:outputText value="Leírás"></h:outputText>
+				<h:inputText value="#{bookManagedBean.editedBook.description}"></h:inputText>
+				<h:outputText value="Kiadás"></h:outputText>
+				<h:inputText value="#{bookManagedBean.editedBook.pubYear}"></h:inputText>
+			</p:panelGrid>
+			<h:commandButton value="Mentés"
+				actionListener="#{bookManagedBean.saveBook}">
+			</h:commandButton>
+		</p:panel>
+	</h:form>
+</h:body>
+</HTML>
