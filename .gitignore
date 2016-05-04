@@ -10,3 +10,6 @@
 *.project
 */target
 /target
+/orai-munka-web/src/main/webapp/VAADIN/gwt-unitCache
+/orai-munka-web/src/main/webapp/VAADIN/widgetsets/WEB-INF/deploy/hu.sol.mik.book.vaadin.BookWidgetSet/rpcPolicyManifest
+/orai-munka-web/src/main/webapp/VAADIN/widgetsets/hu.sol.mik.book.vaadin.BookWidgetSet
